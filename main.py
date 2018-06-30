@@ -1,4 +1,3 @@
-@@ -0,0 +1,115 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 import random, requests, json, time
@@ -6,7 +5,7 @@ from proxymanager import ProxyManager
 from logger import *
 
 #----config----#
-webhook = 'https://hooks.slack.com/services/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' #slack or discord
+webhook = '' #slack or discord
 delay = '10' #seconds (time doesn't really matter)
 useProxies = True
 #----config----#
@@ -35,7 +34,7 @@ def init():
         response = s.get(endpoint)
     responseJson = json.loads(response.text)
     for id in responseJson['products']:
-        #currentIDs.append(id['id'])
+        currentIDs.append(id['id'])
         log('Added to Database - {}'.format(id['id']))
 
 init()
